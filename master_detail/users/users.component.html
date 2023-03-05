@@ -1,0 +1,16 @@
+<h2>Better Health Users</h2>
+<ul class="users">
+  <li *ngFor="let user of users">
+    <button [class.selected]="user === selectedUser" type="button" (click)="onSelect(user)">
+      <span class="badge">{{user.id}}</span>
+      <span class="name">{{user.title}}</span>
+    </button>
+  </li>
+</ul>
+
+<div *ngIf="selectedUser">
+  <h2>{{selectedUser.name}}'s Story</h2>
+  <div><b>Background:</b> {{selectedUser.desc}}</div>
+  <br>
+  <div><b>Needs:</b> {{selectedUser.need}}</div>
+</div>
